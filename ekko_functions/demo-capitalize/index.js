@@ -1,4 +1,4 @@
 exports.handler = async (message) => {
-  // Implement ekko function
+  message.text = message.text.toUpperCase();
   return message;
 };

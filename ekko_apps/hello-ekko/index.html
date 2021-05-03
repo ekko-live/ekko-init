@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello Ekko!</title>
+    <style>
+      ul {
+        padding: 0;
+      }
+
+      li {
+        list-style-type: none;
+      }
+
+      dt {
+        float: left;
+        font-weight: bold;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <input
+        id="input"
+        type="text"
+        placeholder="Enter greeting"
+        size="30"
+        autocomplete="off"
+      />
+      <input type="submit" value="Send Greeting!" />
+    </form>
+    <ul id="messages"></ul>
+    <script src="https://d3irfuxwybyrt2.cloudfront.net/ekko-client-v2.2.1.js"></script>
+    <script>
+      const form = document.getElementById("form");
+      const input = document.getElementById("input");
+      const messages = document.getElementById("messages");
+
+      // Ekko
+      const ekko = new Ekko({
+        host: "myEkkoServerEndpoint",
+        jwt: "myAppJWT",
+        appName: "hello-ekko",
+        uuid: "myUniqueUUID",
+      });
+
+      ekko.addListener({
+        message: (ekkoEvent) => {
+          console.log("Message: ", ekkoEvent);
+          addMessage(ekkoEvent);
+        },
+        status: (ekkoEvent) => {
+          console.log("Status: ", ekkoEvent);
+          addStatus(ekkoEvent);
+        },
+        presence: (ekkoEvent) => {
+          console.log("Presence: ", ekkoEvent);
+          addPresence(ekkoEvent);
+        },
+      });
+
+      ekko.subscribe({ channels: ["greeting"] });
+
+      // App
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        ekko.publish({
+          channel: "greeting",
+          message: { text: input.value },
+        });
+
+        input.value = "";
+      });
+
+      const generateHTML = (params) => {
+        const paramHTML = Object.entries(params)
+          .map(([key, value]) => {
+            return `<dt>${key}:</dt><dd>${value}</dd>`;
+          })
+          .concat(`<dt>Timestamp:</dt><dd>${getTimestamp()}</dd>`)
+          .join("\n");
+
+        return `<li><dl>${paramHTML}</dl></li>`;
+      };
+
+      const getTimestamp = () => {
+        return new Date().toLocaleString();
+      };
+
+      // Ekko Callbacks
+      const addMessage = ({ channel, message, uuid }) => {
+        const messageHTML = generateHTML({
+          Message: message.text,
+          Channel: channel,
+          UUID: uuid,
+        });
+
+        messages.innerHTML = messageHTML + messages.innerHTML;
+      };
+
+      const addStatus = ({ uuid, admin, app, event }) => {
+        const statusHTML = generateHTML({
+          Status: event,
+          App: app,
+          Admin: admin,
+          UUID: uuid,
+        });
+
+        messages.innerHTML = statusHTML + messages.innerHTML;
+      };
+
+      const addPresence = ({ uuid, admin, app, event }) => {
+        const presenceHTML = generateHTML({
+          Presence: event,
+          App: app,
+          Admin: admin,
+          UUID: uuid,
+        });
+
+        messages.innerHTML = presenceHTML + messages.innerHTML;
+      };
+    </script>
+  </body>
+</html>

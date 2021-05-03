@@ -1,0 +1,15 @@
+{
+  "name": "ekko-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ekko-realtime-client": "^2.2.4",
+    "express": "^4.17.1"
+  }
+}
