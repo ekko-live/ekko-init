@@ -6,10 +6,28 @@
   "scripts": {
     "start": "node index.js"
   },
-  "author": "",
   "license": "MIT",
   "dependencies": {
     "ekko-realtime-client": "^2.2.6",
     "express": "^4.17.1"
-  }
+  },
+  "author": "ekko",
+  "contributors": [
+    {
+      "name": "Alex Strick van Linschoten",
+      "github": "<https://github.com/strickvl>"
+    },
+    {
+      "name": "Dorey Miller",
+      "github": "<https://github.com/doreymiller>"
+    },
+    {
+      "name": "Drew Holbrook",
+      "github": "<https://github.com/dpholbrook>"
+    },
+    {
+      "name": "Will Lotherington",
+      "github": "<https://github.com/wLotherington>"
+    }
+  ]
 }
