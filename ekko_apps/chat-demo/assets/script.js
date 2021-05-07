@@ -87,6 +87,8 @@ function handleChannelSelection(selectedChannel) {
       channel.innerHTML = channelInfo[channelName].modifiedText;
       messagesBox.classList.add("selected");
       sessionStorage.setItem("channel", selectedChannel.dataset.channel);
+      currentChannel = channel;
+      currentChannelName = channelName;
     } else {
       channel.classList.remove("selected");
       channel.innerHTML = channelInfo[channelName].originalText;
@@ -109,9 +111,7 @@ form.addEventListener("submit", (event) => {
     emoji: currentEmoji,
   };
 
-  channelNames.forEach((channel) => {
-    ekko.publish({ message, channel });
-  });
+  ekko.publish({ message, channel: currentChannelName });
 
   clearInput();
   scrollToBottom();
