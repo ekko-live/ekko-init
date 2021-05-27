@@ -90,10 +90,10 @@ Next, you will need to copy in your unique app information from the [Create the 
 ```jsx
 // Ekko
 const ekko = new Ekko({
-	host: "myEkkoServerEndpoint",
-	jwt: "myAppJWT",
-	appName: "hello-ekko",
-	uuid: "myUniqueUUID",
+  host: "myEkkoServerEndpoint",
+  jwt: "myAppJWT",
+  appName: "hello-ekko",
+  uuid: "myUniqueUUID",
 });
 ```
 
@@ -180,7 +180,8 @@ We need to tell the Ekko Server to use the `demo-capitalize` function to process
 The updating of the `associations.json` file has already been done.  If you open up the file, you will see how that works:
 
 ```json
-"applications": {
+}
+  "applications": {
     "hello-ekko": {
       "channels": [
         { "channelName": "greeting", "functionNames": ["demo-capitalize"] }
@@ -281,7 +282,8 @@ ekko deploy demo-robot
 
 And finally, run your chat app by opening the `index.html` file in your browser window.  You can open it up in multiple browser windows to test multiple clients.  And voila!  You have a chat app using Ekko for realtime communication and in transit message processing.
 
+
 ## Further Information
 
 For more information on Ekko, you can visit our website [https://ekko-realtime.com/](https://ekko-realtime.com/)
-- 
+
