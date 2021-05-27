@@ -46,8 +46,8 @@ Included in this directory:
 - `demo-capitalize` - a function that capitalizes the message text
 - `associations.json` - a JSON file that contains data for using Ekko Functions to process in transit messages in your realtime web apps.
 
-## Getting Started
 
+## Getting Started
 
 
 Getting started building realtime web applications using the Ekko framework is easy!  We suggest you try getting the demo apps up and running first to give you a sense of how this all works.
@@ -128,7 +128,7 @@ ekko.addListener({
      addMessage(ekkoEvent);
    },
   ...
-	...
+  ...
  });
 ```
 
@@ -185,9 +185,8 @@ The updating of the `associations.json` file has already been done.  If you open
       "channels": [
         { "channelName": "greeting", "functionNames": ["demo-capitalize"] }
       ]
-    },
-    
-		...
+    }
+    ...
   }
 }
 ```
