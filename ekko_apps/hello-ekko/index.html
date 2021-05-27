@@ -110,11 +110,10 @@
         messages.innerHTML = statusHTML + messages.innerHTML;
       };
 
-      const addPresence = ({ uuid, admin, app, event }) => {
+      const addPresence = ({ uuid, channel, eventName }) => {
         const presenceHTML = generateHTML({
-          Presence: event,
-          App: app,
-          Admin: admin,
+          Channel: channel,
+          Event: eventName,
           UUID: uuid,
         });
 
