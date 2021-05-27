@@ -186,7 +186,6 @@ The updating of the `associations.json` file has already been done.  If you open
         { "channelName": "greeting", "functionNames": ["demo-capitalize"] }
       ]
     }
-    ...
   }
 }
 ```
