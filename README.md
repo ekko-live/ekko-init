@@ -13,13 +13,13 @@ Included are the following directories:
 
 ## Contents
 
-- Ekko Apps
-- Ekko Functions
+- [Ekko Apps](#ekko-apps)
+- [Ekko Functions](#ekko-functions)
 - [Getting Started](#getting-started)
-    - hello-ekko
-    - express-demo
-    - chat-demo
-- Further Information
+    - [hello-ekko](#hello-ekko)
+    - [express-demo](#express-demo)
+    - [chat-demo](#chat-demo)
+- [Further Information](#further-information)
 
 
 
