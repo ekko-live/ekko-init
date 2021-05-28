@@ -5,7 +5,7 @@
 
 This is the installation package that contains everything you need to manage realtime web applications using the Ekko framework.
 
-This includes the following directories:
+Included are the following directories:
 
 - `ekko_apps`
 - `ekko_functions`
