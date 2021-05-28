@@ -15,7 +15,7 @@ Included are the following directories:
 
 - Ekko Apps
 - Ekko Functions
-- Getting Started
+- [Getting Started](#getting-started)
     - hello-ekko
     - express-demo
     - chat-demo
