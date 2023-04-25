@@ -70,7 +70,7 @@ You will use this data in the next section, when you update the client code.
 In every realtime web app that uses the Ekko framework, you will need to create a new instance of an Ekko client. The `Ekko` class (Ekko client) is in a JavaScript file hosted on a CDN. Open up the `index.html` file inside the `hello-ekko` app directory and you will see the `<script>` tag that includes the Ekko client for use with the app.
 
 ```html
-<script src="https://d3irfuxwybyrt2.cloudfront.net/ekko-client-v2.2.6.js"></script>
+<script src="https://d53k9niqffb2e.cloudfront.net/ekko-client-v2.2.6.js"></script>
 ```
 
 You can find the open source code, as well as more information on the Ekko Client, [here](https://github.com/ekko-realtime/client) .
